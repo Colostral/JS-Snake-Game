@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div id="d1"></div> -->
+    <container>
+      <h1 class="titulo">SNAKE GAME</h1>
+
+      <div class="jogo">
+        <div class="grid" id="grid"></div>
+        <div class="objetos">
+          <div id="areaCobra">
+            <svg width="450" height="450" viewBox="0 0 450 450">
+              <path id="corpoCobra"></path>
+            </svg>
+          </div>
+          <div id="areaFruta"></div>
+        </div>
+        <div class="telaInicio" id="telaInicio">
+          <button class="botaoPlay" id="botaoPlay">▶ PLAY</button>
+          <button class="botaoPlay" id="botaoRestart">▶ RESTART</button>
+          <div class="menu">
+            <button class="botoes" id="botaoParede" onclick="desativarParede()">
+              Desativar paredes
+            </button>
+            <button
+              class="botoes"
+              id="botaoMovimento"
+              onclick="desativarMovimento()"
+            >
+              Ativar movimento Livre
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="menu">
+        <h3 class="titulo" id="score">Pontuação: 0</h3>
+        <h3 class="titulo" id="maxScore">Max score: 0</h3>
+      </div>
+    </container>
+    <script>
+      const grid = document.getElementById("grid");
+
+      for (let i = 1; i <= 9; i++) {
+        for (let j = 0; j < 9; j++) {
+          const cell = document.createElement("div");
+
+          cell.classList.add("cell");
+          cell.id = `cell[${i}][${j}]`;
+
+          grid.appendChild(cell);
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
